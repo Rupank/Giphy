@@ -1,3 +1,70 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1c1c1c;
+  color: white;
+}
+
+.searchBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  height: 10vh;
+  margin-bottom: 20px;
+}
+
+.searchBox input {
+  width: 60%;
+  height: 60%;
+  border-radius: 10em;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  color: black;
+  font-size: medium;
+}
+
+.grid {
+  width: 96%;
+  columns: 6;
+  column-gap: 10px;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+img {
+  object-fit: cover;
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .grid {
+    columns: 5;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid {
+    columns: 4;
+  }
+  .searchBox {
+    height: 8vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .searchBox {
+    height: 5vh;
+  }
+
+  .grid {
+    column-gap: 5px;
+    columns: 3;
+  }
 }
