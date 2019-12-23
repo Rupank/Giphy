@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders App Component 1`] = `
+<DocumentFragment>
+  <div
+    class="searchBox"
+  >
+    <input
+      placeholder="Type a word and Hit Enter"
+    />
+  </div>
+  <div
+    class="grid"
+  />
+</DocumentFragment>
+`;
