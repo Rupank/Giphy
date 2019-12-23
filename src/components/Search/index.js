@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchGifData, loadMoreGifData } from './redux/SearchActions';
@@ -9,7 +9,10 @@ import '../../App.css';
 
 function Search(props) {
     const { fetchGifData, loadMoreGifData, input, error, isLoading, getNextIndex, completed } = props;
-
+    const inputRef = useRef(null);
+    useEffect(() => {
+        inputRef.current.focus();
+    }, [])
     window.onscroll = debounce(() => {
         if (error || isLoading || completed) {
             return;
@@ -30,7 +33,7 @@ function Search(props) {
     }
     return (
         <div className="searchBox">
-            <input onKeyDown={onInputChange} />
+            <input onKeyDown={onInputChange} ref={inputRef} placeholder='Type a word and Hit Enter' />
         </div>
     )
 }
