@@ -22,6 +22,8 @@ function Search(props) {
     }, 100)
 
     const onInputChange = (event) => {
+
+        // Whenever user hit enter then action is getting triggered
         if (event.keyCode === 13 && event.target.value.trim() !== '' && event.target.value.trim() !== input) {
             fetchGifData(event.target.value);
         }

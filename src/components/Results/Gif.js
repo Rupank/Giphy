@@ -53,7 +53,7 @@ function Gif(props) {
                 onMouseOut={hideBtn}
             />
             {isBtnVisible &&
-                <img className="btn-img" src={getBtnSRC()} onClick={toggleGifState} />
+                <img className="btn-img" src={getBtnSRC()} onClick={toggleGifState} alt="img-btn" />
             }
         </div>
     )

@@ -9,7 +9,6 @@ const app = <Provider store={store}>
     <BrowserRouter>
         <App />
     </BrowserRouter>
-
 </Provider>
 ReactDOM.render(app, document.getElementById('root'));
 
