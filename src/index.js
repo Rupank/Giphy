@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import store from './store/createStore';
 
+// Adding Store and the Browser Router to App Component for page navigation
 const app = <Provider store={store}>
     <BrowserRouter>
         <App />

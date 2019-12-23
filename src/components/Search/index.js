@@ -10,24 +10,33 @@ import '../../App.css';
 function Search(props) {
     const { fetchGifData, loadMoreGifData, input, error, isLoading, getNextIndex, completed } = props;
     const inputRef = useRef(null);
+
+    // To add focus for the first time when this component is rendered
     useEffect(() => {
         inputRef.current.focus();
     }, [])
+
+    // Added Debouncing of scroll events to improve page performance
     window.onscroll = debounce(() => {
+
         if (error || isLoading || completed) {
             return;
         }
 
         if (window.innerHeight + document.documentElement.scrollTop ===
             document.documentElement.offsetHeight) {
+
+            // Trigerring action - loadMoreGifData to get more gifs from the api call
             loadMoreGifData(getNextIndex, input);
         }
     }, 100)
 
+    // Handling of input whenever user types something in input box
     const onInputChange = (event) => {
 
-        // Whenever user hit enter then action is getting triggered
+        // Whenever user hit enter then fetchGifData action is getting triggered
         if (event.keyCode === 13 && event.target.value.trim() !== '' && event.target.value.trim() !== input) {
+            // Trigerring action -fetchGifData to get matching gif as per the user input
             fetchGifData(event.target.value);
         }
     }
