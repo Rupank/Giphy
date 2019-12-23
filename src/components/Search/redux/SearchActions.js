@@ -2,7 +2,7 @@ import axios from 'axios';
 import { FETCH_DATA_REQUESTED, FETCH_DATA_SUCCEEDED, FETCH_DATA_FAILED, FETCH_MORE_SUCCEEDED } from '../types';
 import uniq from 'lodash.uniq';
 const baseURL = 'http://api.giphy.com/v1/gifs/search?api_key=FCMxqwAzPdtoU7kFIwEkfRJHXcBt2ICO';
-const MAX_LIMIT = 30;
+const MAX_LIMIT = 25;
 
 export function loadMoreGifData(prevOffset, searchInput) {
     return function (dispatch) {
